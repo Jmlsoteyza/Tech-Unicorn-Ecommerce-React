@@ -1,0 +1,94 @@
+@use "Utils" as *;
+
+.navbar-container {
+  width: 100%;
+
+  .navbar-inner_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: $main-width;
+    margin-top: 37px;
+    gap: 70px;
+  }
+}
+
+.top-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  //   border: 1px solid red;
+
+  .navbar-contact,
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1.257rem;
+
+    span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $black;
+    }
+  }
+  .navbar-number {
+    margin-left: -0.85rem;
+  }
+}
+
+.down-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.257rem;
+
+    .home-style {
+      font-weight: $font-500;
+    }
+  }
+
+  ul li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .icon-container li {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .icon-cart {
+    position: relative;
+
+    .icon-number {
+      position: absolute;
+      background-color: $text-color-orange;
+      color: $white;
+      font-size: $font-size-14-5;
+      border-radius: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+      text-align: center;
+      top: -7px;
+      right: -8.5px;
+    }
+  }
+}

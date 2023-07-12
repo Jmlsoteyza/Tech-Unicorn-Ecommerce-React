@@ -1,0 +1,90 @@
+@use "Utils" as *;
+
+// Header
+
+.header-container {
+  margin-top: 60px;
+  width: 100%;
+
+  .header-inner_container {
+    display: flex;
+    flex-direction: row;
+    max-width: $main-width;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 0.6rem;
+  }
+}
+
+.homeImageHeader {
+  display: flex;
+  flex-shrink: 1;
+  gap: 1rem;
+
+  img {
+    height: 509px;
+    width: 50%;
+    max-width: 100%;
+  }
+}
+
+.header-description {
+  margin-top: 5rem;
+  h1 {
+    font-size: $font-size-h2;
+    max-width: 25rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+  }
+  p {
+    width: 60%;
+  }
+
+  .homeHeader-btn {
+    margin-top: 3rem;
+    max-width: 7rem;
+
+    .shop-btn {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      outline: none;
+      border: none;
+      font-weight: $font-500;
+      color: $white;
+      background-color: $text-color-orange;
+      border-radius: 6px;
+      margin: 0;
+    }
+  }
+}
+.shop-btn {
+  cursor: pointer;
+}
+.HomeImages-inner_container {
+  display: grid;
+  margin: 0 auto;
+  max-width: $main-width;
+  margin-top: 180px;
+  grid-template-columns: repeat(3, minmax(250px, 500px));
+  gap: 1rem;
+
+  .HomeImages-product_container {
+    border: 1px solid $fills-imgHolder;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+  h1 {
+    font-size: $font-size-h4;
+  }
+  h1,
+  p {
+    text-align: center;
+  }
+}
