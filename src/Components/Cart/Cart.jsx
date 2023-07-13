@@ -8,6 +8,14 @@ const Cart = () => {
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
 
+  const total = () => {
+    let total = 0;
+    products.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  };
+
   return (
     <div className="cart-container">
       <div className="cart-inner_container">
@@ -37,6 +45,10 @@ const Cart = () => {
             />
           </div>
         ))}
+        <h3>
+          Total: <span>{total()}</span>
+        </h3>
+        <button className="checkout">Checkout</button>
       </div>
     </div>
   );

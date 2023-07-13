@@ -51,10 +51,12 @@ const Navbar = () => {
             <li>
               <img src={navheart} alt={navheart} />
             </li>
-            <li className="icon-cart">
-              <span className="icon-number">{products.length}</span>
-              <img src={navcart} alt={navcart} />
-            </li>
+            <Link to="Shop/:id/Cart">
+              <li className="icon-cart">
+                <span className="icon-number">{products.length}</span>
+                <img src={navcart} alt={navcart} />
+              </li>
+            </Link>
             <li>
               <img src={navuser} alt={navuser} />
             </li>

@@ -677,6 +677,17 @@
   background-color: #000;
 }
 
+.checkout {
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  background-color: #f3692e;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  color: #fff;
+  margin-right: auto;
+}
+
 *,
 *::after,
 *::before {

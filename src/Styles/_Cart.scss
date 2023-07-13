@@ -64,3 +64,13 @@
     background-color: $black;
   }
 }
+.checkout {
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  background-color: $text-color-orange;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  color: $white;
+  margin-right: auto;
+}
