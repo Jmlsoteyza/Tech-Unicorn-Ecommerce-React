@@ -2,6 +2,7 @@ import React from "react";
 import { HomeHeader } from "../Header/HeaderComponents";
 import HomeImages from "./HomeImages";
 import HomeCarousel from "./HomeCarousel";
+import Ads from "../Ads/Ads";
 
 const Home = ({ products }) => {
   return (
@@ -9,7 +10,10 @@ const Home = ({ products }) => {
       <div className="home-inner_container">
         <HomeHeader />
         <HomeImages products={products} />
-        <HomeCarousel products={products}/>
+        <HomeCarousel products={products} />
+        <div style={{ marginBlock: "180px" }}>
+          <Ads />
+        </div>
       </div>
     </div>
   );

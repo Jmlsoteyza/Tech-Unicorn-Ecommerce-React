@@ -4,6 +4,7 @@ import logo from "../../assets/logo.svg";
 import navheart from "../../assets/navheart.svg";
 import navcart from "../../assets/navcart.svg";
 import navuser from "../../assets/navuser.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -15,7 +16,9 @@ const Navbar = () => {
             <p className="navbar-number">+971-54-561-7393</p>
           </span>
           <span>
-            <img src={logo} alt={logo} />
+            <Link className="Link" to="/">
+              <img src={logo} alt={logo} />
+            </Link>
           </span>
           <div>
             <span>
@@ -34,7 +37,9 @@ const Navbar = () => {
         </div>
         <div className="down-navbar">
           <ul>
-            <li className="home-style">Home</li>
+            <Link className="Link" to="/">
+              <li className="home-style">Home</li>
+            </Link>
             <li>About</li>
             <li>FAQ</li>
             <li>Blog</li>
@@ -44,7 +49,7 @@ const Navbar = () => {
               <img src={navheart} alt={navheart} />
             </li>
             <li className="icon-cart">
-            <span className="icon-number">3</span>
+              <span className="icon-number">3</span>
               <img src={navcart} alt={navcart} />
             </li>
             <li>

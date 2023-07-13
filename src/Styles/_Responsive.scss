@@ -3,14 +3,18 @@
 @media (max-width: 1600px) {
   .navbar-inner_container,
   .header-inner_container,
-  .HomeImages-inner_container {
+  .HomeImages-inner_container,
+  .home-carousel_info,
+  .ads-inner_container {
     padding-inline: $padding-inline;
   }
 }
 @media (max-width: 920px) {
   .navbar-inner_container,
   .header-inner_container,
-  .HomeImages-inner_container {
+  .HomeImages-inner_container,
+  .home-carousel_info,
+  .ads-inner_container {
     padding-inline: $padding-inline-medium !important;
   }
 
@@ -34,7 +38,9 @@
 @media (max-width: 820px) {
   .navbar-inner_container,
   .header-inner_container,
-  .HomeImages-inner_container {
+  .HomeImages-inner_container,
+  .home-carousel_info,
+  .ads-inner_container {
     padding-inline: $padding-inline-small !important;
   }
 }

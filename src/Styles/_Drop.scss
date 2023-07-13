@@ -1,0 +1,44 @@
+@use "Utils" as *;
+
+.ads-container {
+  width: 100%;
+}
+.ads-inner_container {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $text-color-orange;
+  color: $white;
+  flex-direction: column;
+  padding-block: 10rem;
+  border-radius: 6px;
+  gap: 3rem;
+
+  h1 {
+    font-size: $font-size-h2;
+    font-family: $font-family-merry;
+    margin-block: $padding-inline-small
+  }
+
+  p {
+    margin-left: 5rem;
+    font-size: $font-size-16;
+  }
+
+  button {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    border: transparent;
+    outline: transparent;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-left: 5rem;
+
+  }
+}
