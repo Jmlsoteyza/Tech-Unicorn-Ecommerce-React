@@ -5,8 +5,11 @@ import navheart from "../../assets/navheart.svg";
 import navcart from "../../assets/navcart.svg";
 import navuser from "../../assets/navuser.svg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const products = useSelector((state) => state.cart.products);
+
   return (
     <nav className="navbar-container">
       <div className="navbar-inner_container">
@@ -49,7 +52,7 @@ const Navbar = () => {
               <img src={navheart} alt={navheart} />
             </li>
             <li className="icon-cart">
-              <span className="icon-number">3</span>
+              <span className="icon-number">{products.length}</span>
               <img src={navcart} alt={navcart} />
             </li>
             <li>

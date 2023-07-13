@@ -10,12 +10,17 @@
     gap: 1rem;
     flex-direction: row;
     // align-items: center;
+
+    h3 {
+      font-size: $font-size-h4;
+    }
   }
 }
 .shop-left_filter {
   width: 300px;
   max-width: 100%;
-  border: 1px solid red;
+  padding: 0.6rem;
+  background-color: #f5f5f5;
 
   .price-filter,
   .categories-filter_container,
@@ -24,8 +29,12 @@
     justify-content: space-between;
     align-items: center;
   }
+  .range-filter {
+    margin-top: 1rem;
+  }
   .categories-filter_container {
     cursor: pointer;
+    padding-block: 0.25rem;
 
     span {
       font-weight: $font-500;
@@ -40,6 +49,7 @@
     gap: 1.257rem;
     align-items: center;
     justify-content: center;
+    margin-block: 2rem;
 
     button {
       outline: none;
@@ -56,7 +66,8 @@
 .shop-data_container {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 400px));
-  border: 1px solid red;
+  border: 1px solid rgb(24, 21, 21);
+  padding: 0.6rem;
   align-items: center;
   justify-content: center;
 }
@@ -72,6 +83,12 @@
 .shop-data_info {
   align-items: center;
   text-align: center;
+  margin-top: 1.257rem;
+
+  p {
+    font-size: $font-size-18;
+    color: $text-color-orange;
+  }
 }
 .search-filter {
   position: relative;
@@ -100,4 +117,35 @@
   select {
     // margin-right: 2rem;
   }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+
+.pagination button:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: #fff;
 }

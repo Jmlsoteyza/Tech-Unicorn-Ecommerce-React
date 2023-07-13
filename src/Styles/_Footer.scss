@@ -1,1 +1,27 @@
 @use "Utils" as *;
+
+.footer-container {
+  margin-top: 8rem;
+  background-color: $text-color-orange;
+  padding-block: 6rem;
+  padding-inline: 24rem;
+
+  ul li {
+    list-style: none;
+  }
+
+  p {
+    width: 50%;
+  }
+}
+.footer-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $white;
+}
+
+.footer-logo {
+    width: 90%;
+}

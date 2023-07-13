@@ -1,0 +1,66 @@
+@use "Utils" as *;
+
+.cart-table {
+  display: flex;
+  width: 100%;
+  background-color: $text-color-orange;
+  color: $white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+.cart-container {
+  width: 100%;
+}
+
+.cart-inner_container {
+  max-width: $main-width;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+
+  h1 {
+    font-size: $font-size-h2;
+  }
+}
+.cart-flex {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(400px, 600px));
+  width: 100%;
+  position: relative;
+  margin-block: 2rem;
+
+  h1 {
+    font-size: $font-size-18;
+    margin-left: -3rem;
+  }
+  h1,
+  p,
+  span {
+    margin-top: 1rem;
+    font-weight: $font-600;
+  }
+  .remove-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    top: 18px;
+  }
+}
+.product-img {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $fills-imgHolder;
+
+  img {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: $black;
+  }
+}

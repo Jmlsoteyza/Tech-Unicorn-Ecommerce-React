@@ -4,6 +4,8 @@ import nonephoto1 from "../../assets/nonephoto1.png";
 import headerArrow from "../../assets/homeArrow.png";
 import shopbg from "../../assets/shopbg.png";
 import { Link } from "react-router-dom";
+import nonephoto2 from "../../assets/nonephoto2.png";
+import nonimage from "../../assets/nonimage.png";
 
 export function HomeHeader() {
   return (
@@ -38,7 +40,7 @@ export function ShopHeader() {
     <div className="header-container">
       <div className="header-inner_container">
         <div className="header-description">
-          <p>
+          <p style={{ width: "100%" }}>
             Home {">"} <span>Shop</span>
           </p>
           <h1>Shop</h1>
@@ -56,14 +58,14 @@ export function ShopSingleHeader() {
     <div className="header-container">
       <div className="header-inner_container">
         <div className="header-description">
-          <p>
-            Home {">"} <span>Shop</span>
+          <p style={{ width: "100%" }}>
+            Home {">"} <span>Shopping Bag</span>
             <span></span>
           </p>
-          <h1>Sort out Your Spring Look</h1>
+          <h1>CheckOut</h1>
         </div>
         <div className="homeImageHeader">
-          <img src="" alt="" />
+          <img src={nonimage} alt={nonimage} />
         </div>
       </div>
     </div>
@@ -75,14 +77,14 @@ export function ShoppingBagHeader({ data }) {
     <div className="header-container">
       <div className="header-inner_container">
         <div className="header-description">
-          <p>
-            Home {">"} <span>Shopping Bag</span>
+          <p style={{ width: "100%" }}>
+            Home {">"} <span>Shop</span>
             {">"} <span>{data.category}</span> {">"} <span>{data.title}</span>
           </p>
           <h1>Shopping Bag</h1>
         </div>
         <div className="homeImageHeader">
-          <img src="" alt="" />
+          <img src={shopbg} alt={shopbg} />
         </div>
       </div>
     </div>
