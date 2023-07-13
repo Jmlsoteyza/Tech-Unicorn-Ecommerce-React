@@ -36,7 +36,7 @@ const Cart = () => {
             </div>
             <h1>{product.title}</h1>
             <p>{product.category}</p>
-            <span>{product.price}</span>
+            <span>${product.price}</span>
             <img
               className="remove-icon"
               onClick={() => dispatch(removeItem(product.id))}
