@@ -2,6 +2,7 @@ import React from "react";
 import nonephoto from "../../assets/nonephoto.png";
 import nonephoto1 from "../../assets/nonephoto1.png";
 import headerArrow from "../../assets/homeArrow.png";
+import shopbg from "../../assets/shopbg.png";
 import { Link } from "react-router-dom";
 
 export function HomeHeader() {
@@ -42,9 +43,8 @@ export function ShopHeader() {
           </p>
           <h1>Shop</h1>
         </div>
-        <div className="homeImageHeader">
-          <img src="" alt="" />
-          <img src="" alt="" />
+        <div className="shopImageHeader">
+          <img src={shopbg} alt={shopbg} />
         </div>
       </div>
     </div>

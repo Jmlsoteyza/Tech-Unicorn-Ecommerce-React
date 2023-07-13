@@ -1,0 +1,103 @@
+@use "Utils" as *;
+.shop-container {
+  width: 100%;
+  margin-top: 180px;
+
+  .shop-inner_container {
+    max-width: $main-width;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    // align-items: center;
+  }
+}
+.shop-left_filter {
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid red;
+
+  .price-filter,
+  .categories-filter_container,
+  .range-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .categories-filter_container {
+    cursor: pointer;
+
+    span {
+      font-weight: $font-500;
+    }
+  }
+  input {
+    width: 100%;
+  }
+  .color-filter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.257rem;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      outline: none;
+      border: none;
+      background-color: $black;
+      color: $white;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      margin: 0 auto;
+    }
+  }
+}
+.shop-data_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 400px));
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+}
+.shop-data_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .data-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.shop-data_info {
+  align-items: center;
+  text-align: center;
+}
+.search-filter {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 0.6rem 0.6rem;
+  }
+  img {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+}
+.sortby-filter {
+  display: flex;
+  margin-block: 1.75rem;
+  padding-bottom: 1rem;
+
+  p {
+    flex: 1 1 0%;
+  }
+  span {
+    padding-right: 1rem;
+  }
+  select {
+    // margin-right: 2rem;
+  }
+}
