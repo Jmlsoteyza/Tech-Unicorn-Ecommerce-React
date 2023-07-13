@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap");
 .footer-container {
-  margin-top: 8rem;
+  margin-top: 17rem;
   background-color: #f3692e;
   padding-block: 6rem;
   padding-inline: 24rem;
@@ -678,7 +678,59 @@
 }
 
 .checkout {
-  padding: 0.6rem 1rem;
+  padding: 1.257rem 1rem;
+  border: none;
+  outline: none;
+  background-color: #f3692e;
+  margin-top: 2.5rem;
+  border-radius: 6px;
+  color: #fff;
+  margin-right: auto;
+  cursor: pointer;
+  width: 75%;
+  margin-inline: auto;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.quantity {
+  margin-left: auto;
+  font-weight: 500;
+  float: right;
+}
+
+.checkout-display {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  position: relative;
+}
+.checkout-display .left-coupon {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffefeb;
+  padding: 3rem 2rem;
+  max-width: 28.5rem;
+  width: 100%;
+  gap: 2rem;
+  border-radius: 6px;
+}
+.checkout-display .left-coupon h1 {
+  font-size: 1.5rem;
+}
+.checkout-display .left-coupon input {
+  background-color: transparent;
+  padding: 1rem 1rem;
+  outline: 1px solid #f86338;
+  border: transparent;
+  border-radius: 6px;
+}
+.checkout-display .left-coupon button {
+  padding: 1rem 1.257rem;
   border: none;
   outline: none;
   background-color: #f3692e;
@@ -686,6 +738,44 @@
   border-radius: 6px;
   color: #fff;
   margin-right: auto;
+  cursor: pointer;
+}
+
+.right-total {
+  display: flex;
+  flex-direction: column;
+  width: 27rem;
+  max-width: 100%;
+}
+.right-total h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.right-total .right-shipping,
+.right-total .right-location,
+.right-total .right-quantity {
+  padding-bottom: 1rem;
+}
+.right-total .total-price-quantity {
+  padding-top: 1rem;
+}
+.right-total .right-shipping,
+.right-total .right-location,
+.right-total .right-quantity,
+.right-total .total-price-quantity {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-fill_up {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #f04461;
+  position: absolute;
+  bottom: -15%;
+  right: 0;
+  margin-right: 6rem;
 }
 
 *,
