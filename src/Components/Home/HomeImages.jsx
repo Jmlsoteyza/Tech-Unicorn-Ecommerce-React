@@ -1,7 +1,6 @@
 import React from "react";
 
 const HomeImages = ({ products }) => {
-
   const productLess = () => {
     if (products.length > 6) {
       return products.slice(0, 6);
@@ -16,7 +15,9 @@ const HomeImages = ({ products }) => {
           return (
             <div className="HomeImages-product_container" key={data.id}>
               <img src={data.image} alt={data.image} />
-              <h1>{data.category}</h1>
+              <h1>
+                {data.category.charAt(0).toUpperCase() + data.category.slice(1)}
+              </h1>
               <p>{data.title}</p>
             </div>
           );

@@ -34,8 +34,8 @@ const Cart = () => {
           Cart
         </h1>
         <div className="cart-table">
+          <p>Product</p>
           <p>Product Name</p>
-          <p>Price</p>
           <p>Category</p>
           <p>Total</p>
         </div>
@@ -56,7 +56,13 @@ const Cart = () => {
           </div>
         ))}
         {products.length === 0 && (
-          <div style={{ textAlign: "center", fontSize: "22px" }}>
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: "22px",
+              marginBlock: "8rem",
+            }}
+          >
             Sorry there's nothing on the bag.
           </div>
         )}
@@ -91,7 +97,9 @@ const Cart = () => {
             <button className="checkout" onClick={handleButtonClick}>
               Checkout
             </button>
-            {btnclick ? <div className="btn-fill_up">Please fill up the form below!</div> : null}
+            {btnclick ? (
+              <div className="btn-fill_up">Please fill up the form below!</div>
+            ) : null}
           </div>
         </div>
       </div>

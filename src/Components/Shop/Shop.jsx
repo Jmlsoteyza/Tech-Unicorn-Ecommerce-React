@@ -12,6 +12,13 @@ const Shop = ({ products }) => {
   const [dataPerPage] = useState(6);
   const totalDataPage = Math.ceil(productData.length / dataPerPage);
   const [searchInput, setSearchInput] = useState("");
+  // const [price, setPrice] = useState(5);
+
+  // // price
+  // const handleRangePrice = () => {
+  //   setPrice(e.target.value)
+  // }
+
 
   // pagination function
   const dataPageNumbers = () => {
@@ -46,7 +53,7 @@ const Shop = ({ products }) => {
 
   // search function
   if (searchInput.length > 0) {
-    currentDataItems = currentDataItems.filter((data) => {
+    currentDataItems = productData.filter((data) => {
       return (
         data.title.toLowerCase().includes(searchInput.toLowerCase()) ||
         data.category.toLowerCase().includes(searchInput.toLowerCase())
@@ -111,7 +118,7 @@ const Shop = ({ products }) => {
                   className="categories-filter_container"
                   onClick={() => filterResult("jewelery")}
                 >
-                  <span>jewelery</span>
+                  <span>Jewelery</span>
                   <img src={littleArrow} alt={littleArrow} />
                 </div>
                 <div

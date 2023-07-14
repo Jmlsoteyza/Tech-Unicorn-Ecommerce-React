@@ -55,7 +55,10 @@ const HomeCarousel = ({ products }) => {
                   </div>
                 </Link>
                 <div className="carousel-info">
-                  <p className="carousel-title">{data.category}</p>
+                  <p className="carousel-title">
+                    {data.category.charAt(0).toUpperCase() +
+                      data.category.slice(1)}
+                  </p>
                   <span className="carousel-small">{data.title}</span>
                   <p className="carousel-price">${data.price}</p>
                 </div>

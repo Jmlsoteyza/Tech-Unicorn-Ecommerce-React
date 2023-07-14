@@ -369,6 +369,11 @@
   right: -8.5px;
 }
 
+.header-description {
+  width: 100%;
+  max-width: 400px;
+}
+
 .ads-container {
   width: 100%;
 }
@@ -571,7 +576,8 @@
   margin-bottom: 1rem;
 }
 .singleShop-inner_container p {
-  margin-top: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .singleShop-inner_container button {
   outline: none;
@@ -593,12 +599,23 @@
 
 .main-image {
   width: 100%;
-  max-width: 300px;
   height: 100%;
   border: 1px solid #e2e2ea;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
+  padding-top: 1rem;
   text-align: center;
-  margin-top: -2rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.main-image img {
+  width: 480px;
+  height: 480px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .singleShop-price_check {
@@ -606,10 +623,40 @@
   gap: 3rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  align-items: center;
+}
+.singleShop-price_check .oldprice {
+  text-decoration: line-through;
+  color: #9a9ab0;
+}
+.singleShop-price_check .current-price {
+  font-size: 1.9375rem;
+  color: #f3692e;
 }
 
 .singleShop-right {
-  width: 40%;
+  width: 100%;
+  max-width: 440px;
+}
+
+.singleShop-left {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 650px;
+}
+.singleShop-left .singleShop-subImages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.singleShop-left .singleShop-subImages img {
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
 }
 
 .cart-table {
@@ -640,14 +687,23 @@
 
 .cart-flex {
   display: grid;
-  grid-template-columns: repeat(4, minmax(400px, 600px));
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   width: 100%;
   position: relative;
   margin-block: 2rem;
 }
+.cart-flex p {
+  margin-left: auto;
+  margin-right: 3rem;
+}
+.cart-flex span {
+  margin-left: auto;
+  margin-right: 2.75rem;
+}
 .cart-flex h1 {
   font-size: 1.125rem;
-  margin-left: -3rem;
+  margin-left: 3.7rem;
+  margin-right: 2.5rem;
 }
 .cart-flex h1,
 .cart-flex p,
@@ -661,6 +717,7 @@
   position: absolute;
   right: -10px;
   top: 18px;
+  cursor: pointer;
 }
 
 .product-img {
