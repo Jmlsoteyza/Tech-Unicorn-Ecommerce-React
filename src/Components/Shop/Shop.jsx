@@ -13,6 +13,7 @@ const Shop = ({ products }) => {
   const totalDataPage = Math.ceil(productData.length / dataPerPage);
   const [searchInput, setSearchInput] = useState("");
   const [price, setPrice] = useState(1000);
+  const [sortOption, setSortOption] = useState("");
 
   // pagination function
   const dataPageNumbers = () => {
@@ -64,10 +65,21 @@ const Shop = ({ products }) => {
   const handleRangePrice = (e) => {
     setPrice(parseInt(e.target.value));
   };
-  const filteredDataItems = currentDataItems.filter((data) => {
+  const filteredPrice = currentDataItems.filter((data) => {
     return parseInt(data.price) <= price;
   });
 
+  // sort select
+  let sortDataItems = [...filteredPrice];
+  if (sortOption === "ascending") {
+    sortDataItems.sort((a, b) => b.title.localeCompare(a.title));
+  } else if (sortOption === "descending") {
+    sortDataItems.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortOption === "lowtohigh") {
+    sortDataItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (sortOption === "hightolow") {
+    sortDataItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  }
   return (
     <>
       <ShopHeader />
@@ -146,7 +158,10 @@ const Shop = ({ products }) => {
             <div className="sortby-filter">
               <p>Showing {currentDataItems.length} Results</p>
               <span>Sort by</span>
-              <select>
+              <select
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+              >
                 <option value="ascending">ascending</option>
                 <option value="descending">descending</option>
                 <option value="hightolow">hightolow</option>
@@ -154,7 +169,7 @@ const Shop = ({ products }) => {
               </select>
             </div>
             <div className="shop-data_container">
-              {filteredDataItems.map((data) => {
+              {sortDataItems.map((data) => {
                 return (
                   <div key={data.id} className="shop-data">
                     <Link className="Link" to={`${data.id}`}>
