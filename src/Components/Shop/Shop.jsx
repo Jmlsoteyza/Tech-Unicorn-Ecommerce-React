@@ -44,6 +44,8 @@ const Shop = ({ products }) => {
   const reset = () => {
     setProductData(products);
     setCurrentPage(1);
+    setPrice(1000);
+    setSortOption("");
   };
 
   // search function
@@ -101,16 +103,7 @@ const Shop = ({ products }) => {
                 <p>Range</p>
                 <span>${price}-$1000</span>
               </div>
-              <h3>Color</h3>
-              <div className="color-filter">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-              </div>
-              <h3>Categories</h3>
+              <h3 className="categories-header">Categories</h3>
               <div className="categories-filter">
                 <div
                   className="categories-filter_container"
@@ -140,13 +133,12 @@ const Shop = ({ products }) => {
                   <span>Jewelery</span>
                   <img src={littleArrow} alt={littleArrow} />
                 </div>
-                <div
-                  className="categories-filter_container"
-                  onClick={() => reset()}
-                >
-                  <span>All</span>
-                  <img src={littleArrow} alt={littleArrow} />
-                </div>
+              </div>
+              <div
+                className="categories-filter_container"
+                onClick={() => reset()}
+              >
+                <button>Reset Filter</button>
               </div>
             </div>
           </div>
@@ -162,10 +154,11 @@ const Shop = ({ products }) => {
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
               >
+                <option>Default</option>
                 <option value="ascending">ascending</option>
                 <option value="descending">descending</option>
-                <option value="hightolow">hightolow</option>
-                <option value="lowtohigh">lowtohigh</option>
+                <option value="hightolow">high to low</option>
+                <option value="lowtohigh">low to high</option>
               </select>
             </div>
             <div className="shop-data_container">
