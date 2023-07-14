@@ -12,13 +12,7 @@ const Shop = ({ products }) => {
   const [dataPerPage] = useState(6);
   const totalDataPage = Math.ceil(productData.length / dataPerPage);
   const [searchInput, setSearchInput] = useState("");
-  // const [price, setPrice] = useState(5);
-
-  // // price
-  // const handleRangePrice = () => {
-  //   setPrice(e.target.value)
-  // }
-
+  const [price, setPrice] = useState(1000);
 
   // pagination function
   const dataPageNumbers = () => {
@@ -66,6 +60,14 @@ const Shop = ({ products }) => {
     setSearchInput(e.target.value);
   };
 
+  //  price
+  const handleRangePrice = (e) => {
+    setPrice(parseInt(e.target.value));
+  };
+  const filteredDataItems = currentDataItems.filter((data) => {
+    return parseInt(data.price) <= price;
+  });
+
   return (
     <>
       <ShopHeader />
@@ -77,10 +79,15 @@ const Shop = ({ products }) => {
                 <h3>Price</h3>
                 <img src={priceIcon} alt={priceIcon} />
               </div>
-              <input type="range" min="5" max="1000" />
+              <input
+                type="range"
+                min="5"
+                max="1000"
+                onChange={handleRangePrice}
+              />
               <div className="range-filter">
                 <p>Range</p>
-                <span>$5-$500</span>
+                <span>${price}-$1000</span>
               </div>
               <h3>Color</h3>
               <div className="color-filter">
@@ -147,7 +154,7 @@ const Shop = ({ products }) => {
               </select>
             </div>
             <div className="shop-data_container">
-              {currentDataItems.map((data) => {
+              {filteredDataItems.map((data) => {
                 return (
                   <div key={data.id} className="shop-data">
                     <Link className="Link" to={`${data.id}`}>
