@@ -125,9 +125,12 @@
 
   p {
     flex: 1 1 0%;
+    font-size: $font-size-14-5;
+    color: $text-color-light-grey;
   }
   span {
     padding-right: 1rem;
+    font-size: $font-size-14-5;
   }
 }
 .pagination {
@@ -164,5 +167,5 @@
 
 .arrow.active {
   transform: rotate(90deg);
-  transition: all .25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }

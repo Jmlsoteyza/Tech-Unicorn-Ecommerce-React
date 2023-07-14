@@ -10,6 +10,13 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
 
+  const productsNumber = () => {
+    if (products.length === 0) {
+      return null;
+    }
+    return products.length;
+  };
+
   return (
     <nav className="navbar-container">
       <div className="navbar-inner_container">
@@ -51,9 +58,15 @@ const Navbar = () => {
             <li>
               <img src={navheart} alt={navheart} />
             </li>
-            <Link to="Shop/:id/Cart">
+            <Link to={`Shop/${products.id}/Cart`}>
               <li className="icon-cart">
-                <span className="icon-number">{products.length}</span>
+                <span
+                  className={`icon-number ${
+                    products.length === 0 ? "icon-number hidden" : "icon-number"
+                  }`}
+                >
+                  {productsNumber()}
+                </span>
                 <img src={navcart} alt={navcart} />
               </li>
             </Link>

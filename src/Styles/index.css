@@ -369,6 +369,10 @@
   right: -8.5px;
 }
 
+.icon-number.hidden {
+  display: none;
+}
+
 .header-description {
   width: 100%;
   max-width: 400px;
@@ -538,9 +542,12 @@
 }
 .sortby-filter p {
   flex: 1 1 0%;
+  font-size: 0.906rem;
+  color: #515151;
 }
 .sortby-filter span {
   padding-right: 1rem;
+  font-size: 0.906rem;
 }
 
 .pagination {

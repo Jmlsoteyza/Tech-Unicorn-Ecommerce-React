@@ -148,8 +148,10 @@ const Shop = ({ products }) => {
               <img src={searchIcon} alt={searchIcon} />
             </div>
             <div className="sortby-filter">
-              <p>Showing {currentDataItems.length} Results</p>
-              <span>Sort by</span>
+              <p>
+                Showing {currentPage} - {currentDataItems.length} Results
+              </p>
+              <span>Sort by:</span>
               <select
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
