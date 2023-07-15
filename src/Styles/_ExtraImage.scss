@@ -1,0 +1,52 @@
+@use "Utils" as *;
+
+.ExtraImages-container {
+  max-width: $main-width;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 150px;
+
+  .extraImages-inner_container {
+    display: flex;
+    width: 100%;
+    gap: 1.257rem;
+
+    .extraImages-images_container {
+      width: 300px;
+      border: 1px solid $text-color-light-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  h1 {
+    font-size: $font-size-h4;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 150px;
+    height: 170px;
+    object-fit: cover;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: $font-size-18;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: $font-size-14-5;
+    margin-bottom: 1rem;
+  }
+  span {
+    font-size: $font-size-18;
+    margin-top: 1rem;
+    color: $text-color-orange;
+    font-family: $font-600;
+  }
+  .extraImages-info {
+    text-align: center;
+  }
+}

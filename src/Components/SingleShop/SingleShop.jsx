@@ -5,7 +5,8 @@ import cart from "../../assets/cart.png";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/CartReducer";
 import { Link } from "react-router-dom";
-import image1 from "../../assets/nonephoto.png";
+import ExtraImages from "../Ads/ExtraImages";
+import CustomerReview from "../Ads/CustomerReview";
 
 const SingleShop = ({ products }) => {
   const { id } = useParams();
@@ -22,7 +23,6 @@ const SingleShop = ({ products }) => {
     setMainImage(subImage);
   };
 
-  console.log(mainImage);
   const test = [
     {
       subImages:
@@ -50,7 +50,7 @@ const SingleShop = ({ products }) => {
             <div className="singleShop-subImages">
               {test.map((data) => {
                 return (
-                  <div>
+                  <div key={data.id}>
                     <img
                       src={data.subImages}
                       alt={data.subImages}
@@ -97,6 +97,11 @@ const SingleShop = ({ products }) => {
             </div>
           </div>
         </div>
+      </div>
+      <CustomerReview />
+      <div className="ExtraImages-container">
+        <h1>Related Items</h1>
+        <ExtraImages products={products} />
       </div>
     </div>
   );

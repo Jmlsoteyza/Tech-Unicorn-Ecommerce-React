@@ -1,0 +1,74 @@
+@use "Utils" as *;
+.customer-container {
+  width: 100%;
+  margin-top: 150px;
+
+  h1 {
+    font-size: $font-size-h5;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-left: 1.5rem;
+  }
+
+  .customer-inner_container {
+    max-width: $main-width;
+    margin: 0 auto;
+  }
+  .profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .customer-box {
+    width: 800px;
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    background-color: $Secondary-color-10;
+
+    h3 {
+      font-size: $font-size-h5;
+      margin-top: 2.5rem;
+    }
+    img {
+      position: absolute;
+      top: -13.5%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p {
+      margin-top: 6.5rem;
+      padding-inline: 4rem;
+      color: $text-color-light-grey;
+    }
+
+    .customer-btns button {
+      position: absolute;
+      top: 50%;
+      border-width: 0;
+      cursor: pointer;
+      width: 20px;
+    }
+    .left-btn {
+      left: -50px;
+    }
+    .right-btn {
+      right: -50px;
+    }
+    .random-btn {
+      position: absolute;
+      left: 50px;
+      bottom: 30px;
+      padding: 0.45rem;
+      border: none;
+      outline: none;
+      background-color: $text-color-orange;
+      color: $white;
+    }
+  }
+}

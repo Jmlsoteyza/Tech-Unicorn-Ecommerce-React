@@ -4,10 +4,10 @@ import { ShopSingleHeader } from "../Header/HeaderComponents";
 import removeIcon from "../../assets/removeIcon.svg";
 import { removeItem } from "../../Redux/CartReducer";
 import CartDisplay from "./CartDisplay";
-import ExtraImages from "../Ads/ExtraImages";
-import Checkout from "./Checkout";
+import Parent from "../Checkout/Parent";
 
 const Cart = () => {
+  const [btnclick, setBtnClick] = useState(false);
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
 
@@ -21,8 +21,6 @@ const Cart = () => {
   if (products === 0) {
     return <div>Sorry there's nothing in the bag, please choose a product</div>;
   }
-
-  const [btnclick, setBtnClick] = useState(false);
 
   const handleButtonClick = (e) => {
     setBtnClick(true);
@@ -48,7 +46,7 @@ const Cart = () => {
               <div className="product-img">
                 <img src={product.image} alt={product.image} />
               </div>
-              <h1>{product.title}</h1>
+              <h1>{product.title.split(" ").slice(0, 4).join(" ")}</h1>
               <p>{product.category}</p>
               <span>${product.price}</span>
               <img
@@ -75,7 +73,7 @@ const Cart = () => {
             btnclick={btnclick}
             totalFee={totalFee}
           />
-          <Checkout />
+          <Parent />
         </div>
       </div>
     </>

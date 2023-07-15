@@ -4,6 +4,7 @@ import HomeImages from "./HomeImages";
 import HomeCarousel from "./HomeCarousel";
 import Ads from "../Ads/Ads";
 import ExtraImages from "../Ads/ExtraImages";
+import CustomerReview from "../Ads/CustomerReview";
 
 const Home = ({ products }) => {
   return (
@@ -12,13 +13,15 @@ const Home = ({ products }) => {
         <HomeHeader />
         <HomeImages products={products} />
         <HomeCarousel products={products} />
-        <div style={{ marginBlock: "180px" }}>
+        <div style={{ marginBlock: "150px" }}>
           <Ads />
         </div>
         <div className="ExtraImages-container">
-        <h1>Best Seller</h1>
-        <ExtraImages products={products}/>
+          <h1>Best Seller</h1>
+          <ExtraImages products={products} />
         </div>
+
+        <CustomerReview />
       </div>
     </div>
   );

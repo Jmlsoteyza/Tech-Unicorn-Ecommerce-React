@@ -1,0 +1,114 @@
+@use "Utils" as *;
+
+.Checkout-container {
+  margin-top: 150px;
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  .Checkout-firstLast_flex,
+  .Checkout-postal-and-phone_flex {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 640px;
+
+    .postal,
+    .phone,
+    .first,
+    .last {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 640px;
+    }
+  }
+  .label-up {
+    margin-top: 1rem;
+  }
+
+  .address-line {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .Checkout-email {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    input {
+      width: 100%;
+      max-width: 640px;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h5;
+    margin-bottom: 1rem;
+  }
+
+  input,
+  textarea {
+    outline: none;
+    border: 1px solid $text-color-orange-80;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+  }
+
+  label {
+    font-size: $font-size-14-5;
+    font-weight: $font-500;
+    margin-bottom: 0.5rem;
+  }
+  .signin {
+    font-size: $font-size-14-5;
+    color: $text-color-light-white;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .country {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 640px;
+
+    select {
+      padding: 0.6rem;
+      border: 1px solid $text-color-orange-80;
+    }
+  }
+  .billing-address {
+    margin-top: 1rem;
+  }
+  .check-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  input[type="submit"] {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 1.257rem;
+    outline: none;
+    background-color: transparent;
+  }
+  .shipping-text {
+    color: $text-color-orange;
+  }
+  .error-text {
+    color: $Error-color;
+    font-size: $font-size-14-5;
+    padding-left: 0.127rem;
+    padding-top: 0.2rem;
+  }
+}

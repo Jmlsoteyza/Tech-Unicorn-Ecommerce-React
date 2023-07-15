@@ -5,8 +5,27 @@
   .header-inner_container,
   .HomeImages-inner_container,
   .home-carousel_info,
-  .ads-inner_container {
+  .ads-inner_container,
+  .cart-inner_container {
     padding-inline: $padding-inline;
+  }
+}
+@media (max-width: 1150px) {
+  .checkout-display {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .btn-coupon,
+  .right-total,
+  .checkout {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .checkout-display .left-coupon {
+    max-width: 100% !important;
   }
 }
 @media (max-width: 920px) {
@@ -14,7 +33,8 @@
   .header-inner_container,
   .HomeImages-inner_container,
   .home-carousel_info,
-  .ads-inner_container {
+  .ads-inner_container,
+  .cart-inner_container {
     padding-inline: $padding-inline-medium !important;
   }
 
@@ -40,7 +60,8 @@
   .header-inner_container,
   .HomeImages-inner_container,
   .home-carousel_info,
-  .ads-inner_container {
+  .ads-inner_container,
+  .cart-inner_container {
     padding-inline: $padding-inline-small !important;
   }
 }

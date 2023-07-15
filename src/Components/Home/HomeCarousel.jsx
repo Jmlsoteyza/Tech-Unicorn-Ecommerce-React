@@ -5,8 +5,7 @@ import rightIcon from "../../assets/rightIcon.svg";
 import leftIcon from "../../assets/leftIcon.svg";
 
 const HomeCarousel = ({ products }) => {
-  console.log(products);
-  const [showProducts, setShowProducts] = useState(5);
+  const [showProducts] = useState(5);
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
