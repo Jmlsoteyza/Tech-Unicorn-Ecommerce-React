@@ -45,7 +45,10 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<RouteLayout />}>
-            <Route index element={<Home products={products} />} />
+            <Route
+              index
+              element={<Home products={products} loading={loading} />}
+            />
             <Route path="Shop" element={<Shop products={products} />} />
             <Route
               path="Shop/:id"

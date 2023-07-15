@@ -6,12 +6,12 @@ import Ads from "../Ads/Ads";
 import ExtraImages from "../Ads/ExtraImages";
 import CustomerReview from "../Ads/CustomerReview";
 
-const Home = ({ products }) => {
+const Home = ({ products, loading }) => {
   return (
     <div className="home-container">
       <div className="home-inner_container">
         <HomeHeader />
-        <HomeImages products={products} />
+        <HomeImages products={products} loading={loading} />
         <HomeCarousel products={products} />
         <div style={{ marginBlock: "150px" }}>
           <Ads />
