@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 import ExtraImages from "../Ads/ExtraImages";
 import CustomerReview from "../Ads/CustomerReview";
 
-const SingleShop = ({ products }) => {
+const SingleShop = ({ products, loading }) => {
   const { id } = useParams();
   const parsedId = parseInt(id);
   const data = products.find((product) => product.id === parsedId);
   const dispatch = useDispatch();
 
-  const { title, price, category, image } = data;
+  const { title, price, category, image } = data || {};
   const oldPrice = price * 3;
 
   const [mainImage, setMainImage] = useState(image);
@@ -22,6 +22,8 @@ const SingleShop = ({ products }) => {
   const handleClickImage = (subImage) => {
     setMainImage(subImage);
   };
+
+  const checksImage = mainImage || (image && image);
 
   const test = [
     {
@@ -48,21 +50,28 @@ const SingleShop = ({ products }) => {
         <div className="singleShop-inner_container">
           <div className="singleShop-left">
             <div className="singleShop-subImages">
-              {test.map((data) => {
-                return (
-                  <div key={data.id}>
-                    <img
-                      src={data.subImages}
-                      alt={data.subImages}
-                      onClick={() => handleClickImage(data.subImages)}
-                    />
-                  </div>
-                );
-              })}
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                <>
+                  {test.map((data, key) => (
+                    <div key={key}>
+                      <img
+                        src={data.subImages}
+                        alt={data.subImages}
+                        onClick={() => handleClickImage(data.subImages)}
+                      />
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
-            <div className="main-image" key={data.id}>
-              <img src={mainImage} alt={mainImage} />
-              <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
+            <div className="main-image">
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                <img src={checksImage} alt={checksImage} />
+              )}
             </div>
           </div>
           <div className="singleShop-right">

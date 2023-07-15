@@ -11,9 +11,9 @@ function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const url = "https://fakestoreapi.com/products/";
-
   useEffect(() => {
+    const url = "https://fakestoreapi.com/products/";
+
     setLoading(true);
     axios
       .get(url)
@@ -49,7 +49,7 @@ function App() {
             <Route path="Shop" element={<Shop products={products} />} />
             <Route
               path="Shop/:id"
-              element={<SingleShop products={products} />}
+              element={<SingleShop products={products} loading={loading} />}
             />
             <Route path="Shop/:id/Cart" element={<Cart />} />
           </Route>

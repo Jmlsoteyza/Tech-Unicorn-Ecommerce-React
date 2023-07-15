@@ -13,8 +13,8 @@ const ExtraImages = ({ products }) => {
     <div className="extraImages-inner_container">
       {productLess().map((data) => {
         return (
-          <div className="extraImages-images_container">
-          <Link className="Link" to={`/Shop/${data.id}`}>
+          <div className="extraImages-images_container" key={data.id}>
+            <Link className="Link" to={`/Shop/${data.id}`}>
               <div className="images-heart">
                 <img src={data.image} alt={data.image} />
               </div>
@@ -23,8 +23,8 @@ const ExtraImages = ({ products }) => {
                 <p>{data.category}</p>
                 <span>${data.price}</span>
               </div>
-              </Link>
-            </div>
+            </Link>
+          </div>
         );
       })}
     </div>
