@@ -85,6 +85,7 @@
   padding: 0.6rem;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
 }
 .shop-data_image {
   display: flex;
@@ -104,6 +105,20 @@
     font-size: $font-size-18;
     color: $text-color-orange;
   }
+}
+.res-btn {
+  display: none;
+}
+.close-btn {
+  display: none;
+  padding: 0.75rem 1rem;
+  margin-top: 1.257rem;
+  color: #fff;
+  background-color: #f3692e;
+  border: transparent;
+  outline: transparent;
+  cursor: pointer;
+  border-radius: 6px;
 }
 .search-filter {
   position: relative;

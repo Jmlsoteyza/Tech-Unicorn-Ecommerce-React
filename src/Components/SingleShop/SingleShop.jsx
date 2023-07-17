@@ -13,7 +13,7 @@ const SingleShop = ({ products, loading }) => {
   const parsedId = parseInt(id);
   const data = products.find((product) => product.id === parsedId);
   const dispatch = useDispatch();
-
+  
   const { title, price, category, image } = data || {};
   const oldPrice = price * 3;
 

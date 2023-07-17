@@ -35,28 +35,30 @@ const Cart = () => {
           <h1 className="" style={{ marginTop: "150px" }}>
             Cart
           </h1>
-          <div className="cart-table">
-            <p>Product</p>
-            <p>Product Name</p>
-            <p>Category</p>
-            <p>Total</p>
-          </div>
-          {products.map((product) => (
-            <div className="cart-flex" key={product.id}>
-              <div className="product-img">
-                <img src={product.image} alt={product.image} />
-              </div>
-              <h1>{product.title.split(" ").slice(0, 4).join(" ")}</h1>
-              <p>{product.category}</p>
-              <span>${product.price}</span>
-              <img
-                className="remove-icon"
-                onClick={() => dispatch(removeItem(product.id))}
-                src={removeIcon}
-                alt={removeIcon}
-              />
+          <div className="cart-overflow">
+            <div className="cart-table">
+              <p>Product</p>
+              <p>Product Name</p>
+              <p>Category</p>
+              <p>Total</p>
             </div>
-          ))}
+            {products.map((product) => (
+              <div className="cart-flex" key={product.id}>
+                <div className="product-img">
+                  <img src={product.image} alt={product.image} />
+                </div>
+                <h1>{product.title.split(" ").slice(0, 4).join(" ")}</h1>
+                <p>{product.category}</p>
+                <span>${product.price}</span>
+                <img
+                  className="remove-icon"
+                  onClick={() => dispatch(removeItem(product.id))}
+                  src={removeIcon}
+                  alt={removeIcon}
+                />
+              </div>
+            ))}
+          </div>
           {products.length === 0 && (
             <div
               style={{

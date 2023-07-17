@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 2rem;
+  padding-inline: 2rem;
 
   h1 {
     font-size: $font-size-h5;
@@ -70,7 +72,7 @@
     text-decoration: line-through;
     color: $text-color-light-white;
   }
-  
+
   .current-price {
     font-size: $font-size-h4;
     color: $text-color-orange;

@@ -10,8 +10,6 @@ const Checkout = ({ handleSuccess }) => {
     handleSuccess
   );
 
-  console.log(submitForm);
-
   return (
     <div className="Checkout-container">
       <h1>Checkout</h1>

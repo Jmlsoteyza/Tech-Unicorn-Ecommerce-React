@@ -14,6 +14,17 @@ const Shop = ({ products }) => {
   const [searchInput, setSearchInput] = useState("");
   const [price, setPrice] = useState(1000);
   const [sortOption, setSortOption] = useState("");
+  const [resFilter, setResFilter] = useState(false);
+
+  // responsive filter
+
+  const responsiveFilter = () => {
+    setResFilter(!resFilter);
+  };
+
+  const handleCloseFilter = () => {
+    setResFilter(false);
+  };
 
   // pagination function
   const dataPageNumbers = () => {
@@ -87,8 +98,15 @@ const Shop = ({ products }) => {
       <ShopHeader />
       <div className="shop-container">
         <div className="shop-inner_container">
-          <div className="shop-left_filter">
+          <div
+            className={
+              resFilter ? "shop-left_filter active" : "shop-left_filter"
+            }
+          >
             <div className="shop-price_filter">
+              <button className="close-btn" onClick={responsiveFilter}>
+                Close
+              </button>
               <div className="price-filter">
                 <h3>Price</h3>
                 <img src={priceIcon} alt={priceIcon} />
@@ -107,28 +125,40 @@ const Shop = ({ products }) => {
               <div className="categories-filter">
                 <div
                   className="categories-filter_container"
-                  onClick={() => filterResult("men's clothing")}
+                  onClick={() => {
+                    filterResult("men's clothing");
+                    handleCloseFilter();
+                  }}
                 >
                   <span>Men's Clothing</span>
                   <img src={littleArrow} alt={littleArrow} />
                 </div>
                 <div
                   className="categories-filter_container"
-                  onClick={() => filterResult("women's clothing")}
+                  onClick={() => {
+                    filterResult("women's clothing");
+                    handleCloseFilter();
+                  }}
                 >
                   <span>Women's Clothing</span>
                   <img src={littleArrow} alt={littleArrow} />
                 </div>
                 <div
                   className="categories-filter_container"
-                  onClick={() => filterResult("electronics")}
+                  onClick={() => {
+                    filterResult("electronics");
+                    handleCloseFilter();
+                  }}
                 >
                   <span>Electronics</span>
                   <img src={littleArrow} alt={littleArrow} />
                 </div>
                 <div
                   className="categories-filter_container"
-                  onClick={() => filterResult("jewelery")}
+                  onClick={() => {
+                    filterResult("jewelery");
+                    handleCloseFilter();
+                  }}
                 >
                   <span>Jewelery</span>
                   <img src={littleArrow} alt={littleArrow} />
@@ -136,7 +166,10 @@ const Shop = ({ products }) => {
               </div>
               <div
                 className="categories-filter_container"
-                onClick={() => reset()}
+                onClick={() => {
+                  reset();
+                  handleCloseFilter();
+                }}
               >
                 <button>Reset Filter</button>
               </div>
@@ -147,10 +180,14 @@ const Shop = ({ products }) => {
               <input type="text" onChange={handleChange} value={searchInput} />
               <img src={searchIcon} alt={searchIcon} />
             </div>
+
             <div className="sortby-filter">
               <p>
                 Showing {currentPage} - {currentDataItems.length} Results
               </p>
+              <div className="res-btn" onClick={responsiveFilter}>
+                <button>Filter</button>
+              </div>
               <span>Sort by:</span>
               <select
                 value={sortOption}

@@ -4,7 +4,6 @@
   margin-top: 160px;
   background-color: $text-color-orange;
   padding-block: 6rem;
-  padding-inline: 24rem;
 
   ul li {
     list-style: none;
@@ -18,10 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-wrap: wrap;
   color: $white;
-}
-
-.footer-logo {
-  width: 90%;
 }
