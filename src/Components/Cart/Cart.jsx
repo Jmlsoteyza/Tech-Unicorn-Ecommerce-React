@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ShopSingleHeader } from "../Header/HeaderComponents";
 import removeIcon from "../../assets/removeIcon.svg";
@@ -21,6 +21,16 @@ const Cart = () => {
   if (products === 0) {
     return <div>Sorry there's nothing in the bag, please choose a product</div>;
   }
+
+  useEffect(() => {
+    if (btnclick) {
+      const timer = setTimeout(() => {
+        setBtnClick(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [btnclick]);
 
   const handleButtonClick = (e) => {
     setBtnClick(true);
