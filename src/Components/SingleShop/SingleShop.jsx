@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ShoppingBagHeader } from "../Header/HeaderComponents";
 import cart from "../../assets/cart.png";
@@ -7,17 +7,28 @@ import { addToCart } from "../../Redux/CartReducer";
 import { Link } from "react-router-dom";
 import ExtraImages from "../Ads/ExtraImages";
 import CustomerReview from "../Ads/CustomerReview";
+import check from "../../assets/check.svg";
 
 const SingleShop = ({ products, loading }) => {
   const { id } = useParams();
   const parsedId = parseInt(id);
   const data = products.find((product) => product.id === parsedId);
   const dispatch = useDispatch();
-  
+
   const { title, price, category, image } = data || {};
   const oldPrice = price * 3;
 
   const [mainImage, setMainImage] = useState(image);
+  const [submitProduct, setSubmitProduct] = useState(false);
+
+  useEffect(() => {
+    if (submitProduct) {
+      const timer = setTimeout(() => {
+        setSubmitProduct();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitProduct]);
 
   const handleClickImage = (subImage) => {
     setMainImage(subImage);
@@ -84,25 +95,30 @@ const SingleShop = ({ products, loading }) => {
               <h3 className="oldprice">${oldPrice}</h3>
             </div>
             <div className="singleShop">
-              <Link to="Cart">
-                <button
-                  onClick={() =>
-                    dispatch(
-                      addToCart({
-                        id: data.id,
-                        title: title,
-                        price: price,
-                        category: category,
-                        image: image,
-                      })
-                    )
-                  }
-                >
-                  <span>
-                    Add to Cart <img src={cart} alt={cart} />
-                  </span>
-                </button>
-              </Link>
+              <button
+                onClick={() => {
+                  dispatch(
+                    addToCart({
+                      id: data.id,
+                      title: title,
+                      price: price,
+                      category: category,
+                      image: image,
+                    })
+                  );
+                  setSubmitProduct(true);
+                }}
+              >
+                <span>
+                  Add to Cart <img src={cart} alt={cart} />
+                </span>
+              </button>
+              {submitProduct && (
+                <div className="showMsg">
+                  <img src={check} alt={check} />
+                  <p>Your product is in the bag</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
